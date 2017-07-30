@@ -24,9 +24,12 @@ Explanation: It's the substring "abc" four times. (And the substring "abcabc" tw
  */
 const repeatedSubstringPattern = function(s) {
     let sub
-    for (let i = 0; i < s.length / 2; i++) {
-        let sub = s.substring(0, i + 1)
-        for (let j = i + 1; j <= s.length - sub.length; j += sub.length) {
+    for (let i = 1; i <= s.length / 2; i++) {
+        if(s.length % i !== 0){
+          continue;
+        }
+        let sub = s.substring(0, i)
+        for (let j = i; j <= s.length - sub.length; j += sub.length) {
             if (sub !== s.substring(j, j + sub.length))
                 break
             if (j === s.length - sub.length)
