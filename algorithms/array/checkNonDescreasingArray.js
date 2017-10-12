@@ -21,7 +21,7 @@ Note: The n belongs to [1, 10,000].
  * @param {any} nums 
  * @returns 
  */
-function checkPossibility(nums) {
+function checkNonDescreasingArray(nums) {
   let cns = 0
   for (let i = 1; i < nums.length; i++) {
       if (nums[i] < nums[i - 1]) {
