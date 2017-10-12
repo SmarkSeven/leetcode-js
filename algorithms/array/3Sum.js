@@ -23,11 +23,11 @@ A solution set is:
   }
   for(let i = 0; i < nums.length - 2; i++) {
       if (i === 0 || (i > 0 && nums[i] != nums[i-1])) {
-        let l = i + 1, r = nums.length - 1, sum = 0 - nums[i]
+        let l = i + 1, r = nums.length - 1, num = nums[i]
         while (l < r) {
-          let tempSum = nums[l] + nums[r]
+          let sum = num + nums[l] + nums[r]
           console(i, l, r)
-          if (tempSum === sum) {
+          if (sum === 0) {
             res.push([nums[i], nums[l], nums[r]])
             while(l < r && nums[l] === nums[l + 1])
               l++
@@ -35,7 +35,7 @@ A solution set is:
               r--
             l++
             r--
-          } else if (tempSum < sum) {
+          } else if (sum < 0) {
             l++
           } else {
             r--
