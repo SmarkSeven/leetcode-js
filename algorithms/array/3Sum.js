@@ -26,7 +26,6 @@ A solution set is:
         let l = i + 1, r = nums.length - 1, num = nums[i]
         while (l < r) {
           let sum = num + nums[l] + nums[r]
-          console(i, l, r)
           if (sum === 0) {
             res.push([nums[i], nums[l], nums[r]])
             while(l < r && nums[l] === nums[l + 1])
