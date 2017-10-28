@@ -21,16 +21,16 @@ Explanation: There are 4 substrings: "10", "01", "10", "01" that have equal numb
  * @param {string} s
  * @return {number}
  */
-var countBinarySubstrings = function(s) {
-  let res = 0, preCount = 0, curCount = 1
-  for (let i = 1; i < s.length; i++) {
-      if (s[i] === s[i - 1]) {
-          curCount++
-      } else {
-          preCount = curCount
-          curCount = 1
-      }
-      if (preCount >= curCount) res++
-  }
-  return res
+var countBinarySubstrings = function (s) {
+    let res = 0, preCount = 0, curCount = 1
+    for (let i = 1; i < s.length; i++) {
+        if (s[i] === s[i - 1]) {
+            curCount++
+        } else {
+            preCount = curCount
+            curCount = 1
+        }
+        if (preCount >= curCount) res++
+    }
+    return res
 };
